@@ -1,0 +1,33 @@
+.fondo_menu{
+    -fx-background-color: #033386;
+}
+
+.fondo_forms{
+    -fx-background-color: #B5CFA8;
+}
+
+.fondo_titledPane{
+     -fx-background-color: blue;
+}
+
+.css_botones{
+    -fx-background-color:  #B5CFA8;
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+}
+
+.css_boton_cerrar{
+      -fx-background-color: #E08095;
+      -fx-text-fill: black;
+      -fx-font-weight: bold;
+}
+
+.css_cajas{
+    -fx-text-fill: black;
+}
+.css_etiquetas{
+    -fx-font-family: "Roboto";
+    -fx-font-fill: black;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+}

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane prefHeight="480.0" prefWidth="430.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.FormProductosController">
+   <children>
+      <TableView fx:id="tblProductos" layoutX="15.0" layoutY="15.0" onMouseClicked="#onSelecFila" prefHeight="200.0" prefWidth="400.0">
+        <columns>
+          <TableColumn fx:id="colIdP" prefWidth="30.0" text="ID" visible="false" />
+          <TableColumn fx:id="colCodP" prefWidth="130.0" text="CODIGO" />
+            <TableColumn fx:id="colDesP" prefWidth="270.0" text="DESCRIPCION" />
+            <TableColumn fx:id="colCodBP" prefWidth="75.0" text="C. BARRA" visible="false" />
+            <TableColumn fx:id="colPreCP" prefWidth="75.0" text="P. COSTO" visible="false" />
+            <TableColumn fx:id="colMarP" prefWidth="75.0" text="MARGEN" visible="false" />
+            <TableColumn fx:id="colIvaP" prefWidth="75.0" text="IVA" visible="false" />
+            <TableColumn fx:id="colPreVP" prefWidth="75.0" text="P. VENTA" visible="false" />
+            <TableColumn fx:id="colStoInP" prefWidth="75.0" text="SOTCK IN." visible="false" />
+            <TableColumn fx:id="colStoP" prefWidth="75.0" text="STOCK" visible="false" />
+            <TableColumn fx:id="colCanP" prefWidth="75.0" text="CANTIDAD" visible="false" />
+            <TableColumn fx:id="colIdM" prefWidth="75.0" text="IDM" visible="false" />
+            <TableColumn fx:id="colIdC" prefWidth="75.0" text="IDC" visible="false" />
+            <TableColumn fx:id="colIdPR" prefWidth="75.0" text="IDPR" visible="false" />
+            <TableColumn fx:id="colIdU" prefWidth="75.0" text="IDU" visible="false" />
+        </columns>
+      </TableView>
+      <TitledPane animated="false" layoutX="15.0" layoutY="225.0" prefHeight="190.0" prefWidth="400.0" text="Productos">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TabPane layoutX="15.0" layoutY="15.0" prefHeight="140.0" prefWidth="370.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="Datos Principales">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="15.0" layoutY="15.0" text="Codigo:" />
+                                    <TextField fx:id="txtCodP" layoutX="15.0" layoutY="30.0" onKeyPressed="#onBuscarPorCodigo" prefHeight="28.0" prefWidth="110.0" />
+                                    <Label layoutX="15.0" layoutY="60.0" text="Descripción:" />
+                                    <TextField fx:id="txtDesP" layoutX="15.0" layoutY="77.0" prefHeight="28.0" prefWidth="235.0" />
+                                    <Label layoutX="130.0" layoutY="15.0" text="Categoria:" />
+                                    <TextField fx:id="txtNomC" layoutX="130.0" layoutY="30.0" prefHeight="28.0" prefWidth="115.0" />
+                                    <Button fx:id="btnCategorias" layoutX="250.0" layoutY="30.0" mnemonicParsing="false" onAction="#onBtnCategorias" prefHeight="28.0" prefWidth="30.0" text="Button" />
+                                    <Label layoutX="285.0" layoutY="15.0" text="U. Med.:" />
+                                    <TextField fx:id="txtSigU" layoutX="285.0" layoutY="30.0" prefHeight="28.0" prefWidth="40.0" />
+                                    <Button fx:id="btnUnidadMedidas" layoutX="330.0" layoutY="30.0" mnemonicParsing="false" onAction="#onBtnUnidadMedidas" prefHeight="28.0" prefWidth="30.0" text="Button" />
+                                    <TextField fx:id="txtIdP" layoutX="70.0" layoutY="2.0" prefHeight="20.0" prefWidth="40.0" />
+                                    <TextField fx:id="txtIdC" layoutX="188.0" layoutY="2.0" prefHeight="20.0" prefWidth="40.0" />
+                                    <TextField fx:id="txtIdU" layoutX="235.0" layoutY="2.0" prefHeight="20.0" prefWidth="30.0" />
+                                    <Label layoutX="255.0" layoutY="60.0" text="C. Barra:" />
+                                    <TextField fx:id="txtCodBP" layoutX="255.0" layoutY="77.0" prefHeight="28.0" prefWidth="105.0" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="Compras">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="15.0" layoutY="15.0" text="Proveedor:" />
+                                    <TextField fx:id="txtRazProv" layoutX="15.0" layoutY="30.0" prefHeight="28.0" prefWidth="300.0" />
+                                    <Button fx:id="btnProveedores" layoutX="320.0" layoutY="30.0" mnemonicParsing="false" onAction="#onBtnProveedores" prefHeight="28.0" prefWidth="30.0" text="..." />
+                                    <TextField fx:id="txtIdProv" layoutX="150.0" layoutY="2.0" prefHeight="20.0" prefWidth="40.0" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                        <Tab text="Precio/Stock">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="115.0" layoutY="15.0" text="P. Costo:" />
+                                    <TextField fx:id="txtPreC" layoutX="115.0" layoutY="30.0" prefHeight="28.0" prefWidth="70.0" />
+                                    <Label layoutX="190.0" layoutY="15.0" text="Margen:" />
+                                    <TextField fx:id="txtMar" layoutX="190.0" layoutY="30.0" prefHeight="28.0" prefWidth="50.0" />
+                                    <Label layoutX="245.0" layoutY="15.0" text="Iva:" />
+                                    <TextField fx:id="txtIva" layoutX="245.0" layoutY="30.0" prefHeight="28.0" prefWidth="40.0" />
+                                    <Label layoutX="290.0" layoutY="15.0" text="P. Venta:" />
+                                    <TextField fx:id="txtPreV" layoutX="290.0" layoutY="30.0" prefHeight="28.0" prefWidth="70.0" />
+                                    <Label layoutX="15.0" layoutY="60.0" text="Stock Ini.:" />
+                                    <TextField fx:id="txtStoIn" layoutX="15.0" layoutY="75.0" prefHeight="28.0" prefWidth="60.0" />
+                                    <Label layoutX="80.0" layoutY="60.0" text="Stock:" />
+                                    <TextField fx:id="txtSto" layoutX="80.0" layoutY="75.0" prefHeight="28.0" prefWidth="60.0" />
+                                    <Label layoutX="15.0" layoutY="15.0" text="T. Moneda:" />
+                                    <TextField fx:id="txtTipM" layoutX="15.0" layoutY="30.0" prefHeight="28.0" prefWidth="60.0" />
+                                    <Button fx:id="btnMonedas" layoutX="80.0" layoutY="30.0" mnemonicParsing="false" onAction="#onBtnMonedas" prefHeight="28.0" prefWidth="30.0" text="Button" />
+                                    <TextField fx:id="txtIdM" layoutX="161.0" layoutY="77.0" prefHeight="20.0" prefWidth="40.0" />
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+      <HBox layoutX="15.0" layoutY="425.0" prefHeight="40.0" prefWidth="405.0" spacing="5.0">
+         <children>
+            <Button fx:id="btnGuardar" mnemonicParsing="false" onAction="#onBtnGuardar" prefHeight="28.0" prefWidth="80.0" text="Guardar" />
+            <Button fx:id="btnEditar" mnemonicParsing="false" onAction="#onBtnEditar" prefHeight="28.0" prefWidth="80.0" text="Editar" />
+            <Button fx:id="btnBajas" mnemonicParsing="false" onAction="#onBtnBajas" prefHeight="28.0" prefWidth="80.0" text="Bajas" />
+            <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#onBtnCancelar" prefHeight="28.0" prefWidth="80.0" text="Cancelar" />
+            <Button fx:id="btnCerrar" mnemonicParsing="false" onAction="#onBtnCerrar" prefHeight="28.0" prefWidth="80.0" text="Cerrar" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </HBox>
+   </children>
+</AnchorPane>

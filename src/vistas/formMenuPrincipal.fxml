@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane styleClass="fondo_menu" prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.FormMenuPrincipalController">
+   <children>
+      <MenuBar prefHeight="30.0" prefWidth="500.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Archivo">
+            <items>
+              <MenuItem fx:id="miSalir" mnemonicParsing="false" onAction="#onSalir" text="Salir" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Ventas">
+            <items>
+              <MenuItem fx:id="miVentas" mnemonicParsing="false" onAction="#onAbrirVentas" text="Ventas" />
+                  <MenuItem fx:id="miClientes" mnemonicParsing="false" onAction="#onAbrirClientes" text="Clientes" />
+                  <MenuItem fx:id="miPagos" mnemonicParsing="false" onAction="#onAbrirPagos" text="Pagos" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Compras">
+            <items>
+              <MenuItem fx:id="miCompras" mnemonicParsing="false" onAction="#onAbrirCompras" text="Compras" />
+                  <MenuItem fx:id="miProveedores" mnemonicParsing="false" onAction="#onAbrirProveedores" text="Proveedores" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Productos">
+              <items>
+                <MenuItem fx:id="miProductos" mnemonicParsing="false" onAction="#onAbrirProductos" text="Productos" />
+                  <MenuItem fx:id="miCategorias" mnemonicParsing="false" onAction="#onAbrirCategorias" text="Categorias" />
+                  <MenuItem fx:id="miUDeMedidas" mnemonicParsing="false" onAction="#onAbrirUDeMedidas" text="U. de medidas" />
+                  <MenuItem fx:id="miListasDePrecios" mnemonicParsing="false" onAction="#onAbrirListasDePrecios" text="Listas de precios" />
+                  <MenuItem fx:id="miInventarios" mnemonicParsing="false" onAction="#onAbrirInventarios" text="Inventarios" />
+                  <MenuItem fx:id="miActuPrecios" mnemonicParsing="false" onAction="#onAbrirActualizarPrecios" text="Actualizacion Precios" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Reportes">
+              <items>
+                <MenuItem fx:id="miInfCompras" mnemonicParsing="false" onAction="#onAbrirInfCompras" text="Por Compras" />
+                  <MenuItem fx:id="miInfVentas" mnemonicParsing="false" onAction="#onAbrirInfVentas" text="Por Ventas" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Configuracion">
+              <items>
+                <MenuItem fx:id="miUsuarios" mnemonicParsing="false" onAction="#onAbrirUsuarios" text="Usuarios" />
+                  <MenuItem fx:id="miMonedas" mnemonicParsing="false" onAction="#onAbrirMonedas" text="Monedas" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>

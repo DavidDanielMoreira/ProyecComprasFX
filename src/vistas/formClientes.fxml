@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane styleClass="fondo_forms" prefHeight="470.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.FormClientesController">
+   <children>
+      <TableView fx:id="tblClientes" layoutX="15.0" layoutY="15.0" onMouseClicked="#onSelecFila" prefHeight="160.0" prefWidth="400.0">
+        <columns>
+          <TableColumn fx:id="colIdC" prefWidth="40.0" text="ID" visible="false" />
+          <TableColumn fx:id="colApeC" prefWidth="130.0" text="APELLIDO" />
+            <TableColumn fx:id="colNomC" prefWidth="160.0" text="NOMBRES" />
+            <TableColumn fx:id="colDomC" prefWidth="75.0" text="DOMICILIO" visible="false" />
+            <TableColumn fx:id="colDniC" prefWidth="110.0" text="DNI" />
+            <TableColumn fx:id="colTelC" prefWidth="75.0" text="TELEFONO" visible="false" />
+            <TableColumn fx:id="colCorC" prefWidth="75.0" text="CORREO" visible="false" />
+            <TableColumn fx:id="colOtrC" prefWidth="75.0" text="OTROS DATOS" visible="false" />
+        </columns>
+      </TableView>
+      <TitledPane animated="false" layoutX="15.0" layoutY="180.0" prefHeight="275.0" prefWidth="400.0" text="Clientes:">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TabPane layoutX="15.0" layoutY="15.0" prefHeight="230.0" prefWidth="370.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="Datos Principales">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="15.0" layoutY="15.0" text="Apellido:" styleClass="css_etiquetas"/>
+                                    <TextField fx:id="txtApeC" layoutX="15.0" layoutY="30.0" prefHeight="28.0" prefWidth="110.0" styleClass="css_cajas"/>
+                                    <Label layoutX="130.0" layoutY="15.0" text="Nombres:" styleClass="css_etiquetas" />
+                                    <TextField fx:id="txtNomC" layoutX="130.0" layoutY="30.0" prefHeight="28.0" prefWidth="140.0" />
+                                    <Label layoutX="15.0" layoutY="60.0" text="Domicilio:" styleClass="css_etiquetas" />
+                                    <TextField fx:id="txtDomC" layoutX="15.0" layoutY="75.0" prefHeight="28.0" prefWidth="255.0" />
+                                    <Label layoutX="15.0" layoutY="105.0" text="DNI:" styleClass="css_etiquetas" />
+                                    <TextField fx:id="txtDniC" layoutX="15.0" layoutY="120.0" onKeyPressed="#onBuscarPorDni" onKeyTyped="#onCtrolDni" prefHeight="28.0" prefWidth="100.0" />
+                                    <VBox layoutX="275.0" layoutY="20.0" prefHeight="170.0" prefWidth="90.0" spacing="5.0">
+                                       <children>
+                                          <Button fx:id="btnGuardar" mnemonicParsing="false" onAction="#onBtnGuardar" prefHeight="28.0" prefWidth="80.0" text="Guardar" styleClass="css_botones" />
+                                          <Button fx:id="btnEditar" mnemonicParsing="false" onAction="#onBtnEditar" prefHeight="28.0" prefWidth="80.0" text="Editar" styleClass="css_botones" />
+                                          <Button fx:id="btnBajas" mnemonicParsing="false" onAction="#onBtnBajas" prefHeight="28.0" prefWidth="80.0" text="Bajas" styleClass="css_botones" />
+                                          <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#onBtnCancelar" prefHeight="28.0" prefWidth="80.0" text="Cancelar" styleClass="css_botones"  />
+                                          <Button fx:id="btnCerrar" mnemonicParsing="false" onAction="#onBtnCerrar" prefHeight="28.0" prefWidth="80.0" text="Cerrar" styleClass="css_boton_cerrar" />
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </VBox>
+                                    <Label layoutX="120.0" layoutY="105.0" text="Télefono:" styleClass="css_etiquetas" />
+                                    <TextField fx:id="txtTelC" layoutX="120.0" layoutY="120.0" prefHeight="28.0" prefWidth="150.0" />
+                                    <Label layoutX="15.0" layoutY="150.0" text="Correo:" styleClass="css_etiquetas" />
+                                    <TextField fx:id="txtCorC" layoutX="15.0" layoutY="167.0" prefHeight="28.0" prefWidth="255.0" />
+                                    <TextField fx:id="txtIdC" layoutX="220.0" layoutY="3.0" prefHeight="20.0" prefWidth="50.0" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="Datos Adicionales">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="15.0" layoutY="15.0" text="Datos Adicionales:" styleClass="css_etiquetas" />
+                                    <TextArea fx:id="txtOtrC" layoutX="15.0" layoutY="30.0" prefHeight="160.0" prefWidth="340.0" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="250.0" prefWidth="470.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.FormUMedidasController">
+   <children>
+      <TableView fx:id="tblUMedidas" layoutX="270.0" layoutY="15.0" onMouseClicked="#onSelecFila" prefHeight="180.0" prefWidth="190.0">
+        <columns>
+          <TableColumn fx:id="colIdU" prefWidth="30.0" text="ID" visible="false" />
+          <TableColumn fx:id="colSigU" text="SIGLA" />
+            <TableColumn fx:id="colDesU" prefWidth="110.0" text="DESCRIPCION" />
+        </columns>
+      </TableView>
+      <TitledPane animated="false" layoutX="15.0" layoutY="15.0" prefHeight="210.0" prefWidth="250.0" text="Unidad Medidas;">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TabPane layoutX="15.0" layoutY="15.0" prefHeight="160.0" prefWidth="220.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="Datos:">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="15.0" layoutY="15.0" text="Sigla:" />
+                                    <TextField fx:id="txtSigU" layoutX="15.0" layoutY="30.0" prefHeight="28.0" prefWidth="60.0" />
+                                    <Label layoutX="15.0" layoutY="60.0" text="Descripción:" />
+                                    <TextField fx:id="txtDesU" layoutX="15.0" layoutY="75.0" prefHeight="28.0" prefWidth="100.0" />
+                                    <VBox layoutX="130.0" layoutY="5.0" prefHeight="110.0" prefWidth="80.0" spacing="5.0">
+                                       <children>
+                                          <Button fx:id="btnGuardar" mnemonicParsing="false" onAction="#onBtnGuardar" prefHeight="25.0" prefWidth="80.0" text="Guardar" />
+                                          <Button fx:id="btnEditar" mnemonicParsing="false" onAction="#onBtnEditar" prefHeight="25.0" prefWidth="80.0" text="Editar" />
+                                          <Button fx:id="btnBajas" mnemonicParsing="false" onAction="#onBtnBajas" prefHeight="25.0" prefWidth="80.0" text="Bajas" />
+                                          <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#onBtnCancelar" prefHeight="25.0" prefWidth="80.0" text="Cancelar" />
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </VBox>
+                                    <TextField fx:id="txtIdU" layoutX="75.0" layoutY="32.0" prefHeight="20.0" prefWidth="40.0" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+      <Button fx:id="btnCerrar" layoutX="380.0" layoutY="200.0" mnemonicParsing="false" onAction="#onBtnCerrar" prefWidth="80.0" text="Cerrar" />
+   </children>
+</AnchorPane>

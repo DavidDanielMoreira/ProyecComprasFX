@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="500.0" prefWidth="530.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.FormProveedoresController">
+   <children>
+      <TableView fx:id="tblProveedores" layoutX="15.0" layoutY="15.0" onMouseClicked="#onSelecFila" prefHeight="200.0" prefWidth="500.0">
+        <columns>
+          <TableColumn fx:id="colIdP" prefWidth="30.0" text="ID" visible="false" />
+          <TableColumn fx:id="colRazP" prefWidth="200.0" text="RAZON SOCIAL " />
+            <TableColumn fx:id="colDomP" prefWidth="200.0" text="DOMICILIO" />
+            <TableColumn fx:id="colCuiP" prefWidth="100.0" text="CUIT" />
+            <TableColumn fx:id="colTelP" prefWidth="75.0" text="TELEFONO" visible="false" />
+            <TableColumn fx:id="colCorP" prefWidth="75.0" text="CORREO" visible="false" />
+            <TableColumn fx:id="colConP" prefWidth="75.0" text="CONTACTO" visible="false" />
+            <TableColumn fx:id="colOtrP" prefWidth="75.0" text="OTROS DATOS" visible="false" />
+        </columns>
+      </TableView>
+      <TitledPane animated="false" layoutX="15.0" layoutY="227.0" prefHeight="240.0" prefWidth="500.0" text="untitled">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TabPane layoutX="15.0" layoutY="15.0" prefHeight="190.0" prefWidth="470.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="Datos Principales">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="15.0" layoutY="15.0" text="Razón Social:" />
+                                    <TextField fx:id="txtRazP" layoutX="15.0" layoutY="30.0" prefHeight="28.0" prefWidth="315.0" />
+                                    <Label layoutX="15.0" layoutY="60.0" text="Domicilio:" />
+                                    <TextField fx:id="txtDomP" layoutX="15.0" layoutY="75.0" prefHeight="28.0" prefWidth="315.0" />
+                                    <Label layoutX="15.0" layoutY="105.0" text="Cuit" />
+                                    <TextField fx:id="txtCuiP" layoutX="15.0" layoutY="120.0" onKeyPressed="#onBuscarPorCuit" prefHeight="28.0" prefWidth="100.0" promptText="0000000000" />
+                                    <Label layoutX="120.0" layoutY="105.0" text="Télefono:" />
+                                    <TextField fx:id="txtTelP" layoutX="120.0" layoutY="120.0" prefHeight="28.0" prefWidth="210.0" promptText="00000000000" />
+                                    <VBox layoutX="356.0" layoutY="5.0" prefHeight="140.0" prefWidth="90.0" spacing="5.0">
+                                       <children>
+                                          <Button fx:id="btnGuardar" mnemonicParsing="false" onAction="#onBtnGuardar" prefHeight="28.0" prefWidth="80.0" text="Guardar" />
+                                          <Button fx:id="btnEditar" mnemonicParsing="false" onAction="#onBtnEditar" prefHeight="28.0" prefWidth="80.0" text="Editar" />
+                                          <Button fx:id="btnBajas" mnemonicParsing="false" onAction="#onBtnBajas" prefHeight="28.0" prefWidth="80.0" text="Bajas" />
+                                          <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#onBtnCancelar" prefHeight="28.0" prefWidth="80.0" text="Cancelar" />
+                                          <Button fx:id="btnCerrar" mnemonicParsing="false" onAction="#onBtnCerrar" prefHeight="28.0" prefWidth="80.0" text="Cerrar" />
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </VBox>
+                                    <TextField fx:id="txtIdP" layoutX="290.0" layoutY="2.0" prefHeight="20.0" prefWidth="40.0" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="Datos Adicionales">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="15.0" layoutY="15.0" text="Correo:" />
+                                    <TextField fx:id="txtCorP" layoutX="15.0" layoutY="30.0" prefHeight="28.0" prefWidth="260.0" />
+                                    <Label layoutX="280.0" layoutY="15.0" text="Contacto:" />
+                                    <TextField fx:id="txtConP" layoutX="280.0" layoutY="30.0" prefHeight="28.0" prefWidth="170.0" />
+                                    <Label layoutX="15.0" layoutY="60.0" text="Otros Datos:" />
+                                    <TextArea fx:id="txtOtrP" layoutX="15.0" layoutY="75.0" prefHeight="80.0" prefWidth="440.0" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+   </children>
+</AnchorPane>

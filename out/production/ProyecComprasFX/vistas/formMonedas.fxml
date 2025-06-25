@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="190.0" prefWidth="460.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.FormMonedasController">
+   <children>
+      <TitledPane animated="false" collapsible="false" layoutX="15.0" layoutY="15.0" prefHeight="160.0" prefWidth="200.0" text="Datos Monedas:">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="271.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="15.0" layoutY="15.0" text="Simbolo:" />
+                  <TextField fx:id="txtSimM" layoutX="15.0" layoutY="30.0" prefHeight="28.0" prefWidth="60.0" />
+                  <Label layoutX="15.0" layoutY="60.0" text="Descripción:" />
+                  <TextField fx:id="txtDesM" layoutX="15.0" layoutY="75.0" prefHeight="28.0" prefWidth="100.0" />
+                  <VBox layoutX="115.0" layoutY="5.0" prefHeight="120.0" prefWidth="80.0" spacing="5.0">
+                     <children>
+                        <Button fx:id="btnGuardar" mnemonicParsing="false" onAction="#onBtnGuardar" prefHeight="25.0" prefWidth="80.0" text="Guardar" />
+                        <Button fx:id="btnEditar" mnemonicParsing="false" onAction="#onBtnEditar" prefHeight="25.0" prefWidth="80.0" text="Editar" />
+                        <Button fx:id="btnBajas" mnemonicParsing="false" onAction="#onBtnBajas" prefHeight="25.0" prefWidth="80.0" text="Bajas" />
+                        <Button fx:id="btnCerrar" mnemonicParsing="false" onAction="#onBtnCerrar" prefHeight="25.0" prefWidth="80.0" text="Cerrar" />
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </VBox>
+                  <TextField fx:id="txtIdM" layoutX="75.0" layoutY="3.0" prefHeight="20.0" prefWidth="40.0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+      <TableView fx:id="tblMonedas" layoutX="225.0" layoutY="15.0" onMouseClicked="#onSelecFila" prefHeight="160.0" prefWidth="220.0">
+        <columns>
+          <TableColumn fx:id="colIdM" prefWidth="30.0" text="ID" />
+          <TableColumn fx:id="colSimM" text="SIMBOLO" />
+            <TableColumn fx:id="colDesM" prefWidth="110.0" text="DESCRIPCION" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

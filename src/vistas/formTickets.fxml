@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="570.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.FormTicketsController">
+   <children>
+      <TitledPane animated="false" layoutX="15.0" layoutY="15.0" prefHeight="185.0" prefWidth="500.0" text="Datos Ventas:">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="15.0" layoutY="15.0" text="Fecha:" />
+                  <DatePicker fx:id="dpFecha" layoutX="15.0" layoutY="30.0" onMouseClicked="#onFechaSelec" prefHeight="28.0" prefWidth="110.0" />
+                  <Label layoutX="130.0" layoutY="15.0" text="Tipo:" />
+                  <TextField fx:id="txtTipoCom" layoutX="130.0" layoutY="30.0" prefHeight="28.0" prefWidth="40.0" />
+                  <Label layoutX="175.0" layoutY="15.0" text="Nro.: Comp.:" />
+                  <TextField fx:id="txtNroCom" layoutX="175.0" layoutY="30.0" onKeyPressed="#onBuscarPorNroF" prefHeight="28.0" prefWidth="100.0" />
+                  <Label layoutX="280.0" layoutY="15.0" text="Modo Pago:" />
+                  <ComboBox fx:id="cmbMPagos" layoutX="280.0" layoutY="30.0" onMouseClicked="#onSelecModo" prefHeight="28.0" prefWidth="120.0" />
+                  <Label layoutX="15.0" layoutY="60.0" text="Apellido:" />
+                  <TextField fx:id="txtApeCli" layoutX="12.0" layoutY="75.0" prefHeight="28.0" prefWidth="115.0" />
+                  <Label layoutX="130.0" layoutY="60.0" text="Nombres::" />
+                  <TextField fx:id="txtNomCli" layoutX="130.0" layoutY="75.0" prefHeight="28.0" prefWidth="130.0" />
+                  <Label layoutX="265.0" layoutY="60.0" text="DNI:" />
+                  <TextField fx:id="txtDniCli" layoutX="265.0" layoutY="75.0" prefHeight="28.0" prefWidth="90.0" />
+                  <Label layoutX="15.0" layoutY="105.0" text="Domicilio:" />
+                  <TextField fx:id="txtDomCli" layoutX="15.0" layoutY="120.0" prefHeight="28.0" prefWidth="255.0" />
+                  <Label layoutX="275.0" layoutY="105.0" text="Telefono:" />
+                  <TextField fx:id="txtTelCli" layoutX="275.0" layoutY="120.0" prefHeight="28.0" prefWidth="125.0" />
+                  <VBox layoutX="410.0" layoutY="3.0" prefHeight="140.0" prefWidth="80.0" spacing="5.0">
+                     <children>
+                        <Button fx:id="btnGuardar" mnemonicParsing="false" onAction="#onBtnGuardar" prefHeight="25.0" prefWidth="80.0" text="Guardar" />
+                        <Button fx:id="btnEditar" mnemonicParsing="false" onAction="#onBtnEditar" prefHeight="25.0" prefWidth="80.0" text="Editar" />
+                        <Button fx:id="btnBajas" mnemonicParsing="false" onAction="#onBtnBajas" prefHeight="25.0" prefWidth="80.0" text="Bajas" />
+                        <Button fx:id="btnBajas" mnemonicParsing="false" onAction="#onBtnCancelar" prefHeight="25.0" prefWidth="80.0" text="Cancelar" />
+                        <Button fx:id="btnCerrar" mnemonicParsing="false" onAction="#onBtnCerrar" prefHeight="25.0" prefWidth="80.0" text="Cerrar" />
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </VBox>
+                  <Button fx:id="btnClientes" layoutX="360.0" layoutY="75.0" mnemonicParsing="false" onAction="#onBtnClientes" prefHeight="28.0" prefWidth="40.0" text="..." />
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+      <TableView fx:id="tblDetalleTickets" layoutX="15.0" layoutY="208.0" prefHeight="200.0" prefWidth="570.0">
+        <columns>
+          <TableColumn fx:id="colIdP" prefWidth="30.0" text="IDP" visible="false" />
+          <TableColumn fx:id="colCodP" prefWidth="110.0" text="CODIGO" />
+            <TableColumn fx:id="colDesP" prefWidth="230.0" text="DESCRIPCION" />
+            <TableColumn fx:id="colCanD" prefWidth="75.0" text="CANTIDAD" />
+            <TableColumn fx:id="colPreD" text="PRECIO" />
+            <TableColumn fx:id="colImpD" text="IMPORTE" />
+        </columns>
+      </TableView>
+      <TitledPane animated="false" layoutX="15.0" layoutY="420.0" prefHeight="140.0" prefWidth="570.0" text="Productos:">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="15.0" layoutY="15.0" text="Codigo:" />
+                  <TextField fx:id="txtCodProd" layoutX="15.0" layoutY="30.0" prefHeight="28.0" prefWidth="95.0" />
+                  <Label layoutX="115.0" layoutY="15.0" text="Descripcion:" />
+                  <TextField fx:id="txtDesProd" layoutX="115.0" layoutY="30.0" prefHeight="28.0" prefWidth="235.0" />
+                  <Button fx:id="btnProductos" layoutX="355.0" layoutY="30.0" mnemonicParsing="false" onAction="#onBtnProductos" prefHeight="28.0" prefWidth="40.0" text="..." />
+                  <TextField fx:id="txtIdProd" layoutX="330.0" layoutY="2.0" prefHeight="20.0" prefWidth="30.0" />
+                  <Label layoutX="15.0" layoutY="60.0" text="Cantidad:" />
+                  <TextField fx:id="txtCanDeta" layoutX="15.0" layoutY="75.0" onKeyReleased="#onCalcImp" prefHeight="28.0" prefWidth="50.0" />
+                  <Label layoutX="70.0" layoutY="60.0" text="Precio:" />
+                  <TextField fx:id="txtPreProd" alignment="CENTER_RIGHT" layoutX="70.0" layoutY="75.0" prefHeight="28.0" prefWidth="70.0" promptText="00000.00" />
+                  <Label layoutX="145.0" layoutY="60.0" text="Importe:" />
+                  <TextField fx:id="txtImpDeta" alignment="CENTER_RIGHT" layoutX="145.0" layoutY="75.0" prefHeight="28.0" prefWidth="70.0" promptText="0.00" />
+                  <HBox layoutX="230.0" layoutY="70.0" prefHeight="35.0" prefWidth="240.0" spacing="5.0">
+                     <children>
+                        <Button fx:id="btnAgregar" mnemonicParsing="false" onAction="#onBtnAgregar" prefWidth="80.0" text="Agregar" />
+                        <Button fx:id="btnInsertar" mnemonicParsing="false" onAction="#onBtnInsertar" prefWidth="80.0" text="Insertar" />
+                        <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#onBtnEliminar" prefWidth="80.0" text="Eliminar" />
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+                  <TextField fx:id="txtDescCom" layoutX="490.0" layoutY="30.0" onKeyReleased="#onCalcDescuento" prefHeight="28.0" prefWidth="70.0" promptText="0.0" />
+                  <Label layoutX="490.0" layoutY="15.0" text="Descuento:" />
+                  <Label layoutX="490.0" layoutY="60.0" text="Total:" />
+                  <TextField fx:id="txtTotCom" alignment="CENTER_RIGHT" layoutX="490.0" layoutY="75.0" prefHeight="28.0" prefWidth="70.0" promptText="0.00" />
+                  <RadioButton fx:id="rbDescuento" layoutX="400.0" layoutY="30.0" mnemonicParsing="false" onMouseClicked="#onAplDescuento" text="Descuento:" />
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+      <TextField fx:id="txtIdCom" layoutX="526.0" layoutY="17.0" prefHeight="20.0" prefWidth="30.0" />
+      <TextField fx:id="txtIdCli" layoutX="526.0" layoutY="48.0" prefHeight="20.0" prefWidth="30.0" />
+   </children>
+</AnchorPane>
