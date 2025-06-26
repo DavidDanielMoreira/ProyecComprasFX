@@ -167,7 +167,8 @@ public class FormComprasController implements Initializable {
     }
     @FXML
     private void onBtnCerrar(ActionEvent event){
-
+        Stage stage = (Stage) btnCerrar.getScene().getWindow();
+        stage.close();
     }
     @FXML
     private void onBtnProveedores(ActionEvent event){

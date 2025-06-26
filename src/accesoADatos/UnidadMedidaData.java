@@ -29,6 +29,22 @@ public class UnidadMedidaData {
         }
     }
 
+    //metodo editar UnidadMedia
+    public void editarUnidadMedida(UnidadMedida uMedida){
+        String sql = "Update u_medidas set sigla_unid=?,descripcion_unid=? where id_unid=?";
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, uMedida.getSiglaUnid());
+            ps.setString(2, uMedida.getDescripcionUnid());
+            ps.setInt(3,uMedida.getIdUnid());
+            ps.executeUpdate();
+            ps.close();
+        } catch (SQLException e) {
+            //throw new RuntimeException(e);
+            System.out.println("Error al editar Unidad Medida..." +e.getMessage());
+        }
+    }
+
     //metodo listar UnidadMedida
     public List<UnidadMedida> listarUnidades(){
         UnidadMedida uMedida = null;

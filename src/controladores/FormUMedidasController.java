@@ -5,16 +5,15 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import entidades.*;
 import accesoADatos.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class FormUMedidasController implements Initializable {
@@ -70,11 +69,41 @@ public class FormUMedidasController implements Initializable {
 
     @FXML
     private void onBtnGuardar(ActionEvent event){
-
+        if(!txtSigU.getText().isEmpty() && txtDesU.getText().isEmpty()){
+            if(editar==true){
+                Alert mensajeA = new Alert(Alert.AlertType.CONFIRMATION);
+                mensajeA.setTitle("ALTAS UNIDAD MEDIDAS");
+                mensajeA.setContentText("¿Confirma el alta de la Unidad Medida?");
+                mensajeA.setHeaderText(null);
+                Optional<ButtonType> opcion = mensajeA.showAndWait();
+                if(opcion.get()==ButtonType.OK){
+                    inserUindadMedida();
+                    cargarTabla();
+                    limpiarCampos();
+                }else if(editar==true){
+                    Alert mensajeE = new Alert(Alert.AlertType.CONFIRMATION);
+                    mensajeE.setTitle("EDITAR UNIDAD MEDIDAS");
+                    mensajeE.setContentText("¿Confirma la edición de la Unidad Medida?");
+                    mensajeE.setHeaderText(null);
+                    Optional<ButtonType> opc = mensajeE.showAndWait();
+                    if(opcion.get()==ButtonType.OK) {
+                        editUnidadMedida();
+                        cargarTabla();
+                        limpiarCampos();
+                    }
+                }
+            }
+        }else{
+            Alert mensaje = new Alert(Alert.AlertType.INFORMATION);
+            mensaje.setTitle("INFORMACION!!!");
+            mensaje.setContentText("Campos vacios");
+            mensaje.setHeaderText(null);
+            mensaje.showAndWait();
+        }
     }
     @FXML
     private void onBtnEditar(ActionEvent event){
-
+        editar=true;
     }
     @FXML
     private void onBtnBajas(ActionEvent event){
@@ -86,7 +115,8 @@ public class FormUMedidasController implements Initializable {
     }
     @FXML
     private void onBtnCerrar(ActionEvent event){
-
+        Stage stage = (Stage) btnCerrar.getScene().getWindow();
+        stage.close();
     }
     @FXML
     private void onSelecFila(MouseEvent event){
@@ -115,5 +145,22 @@ public class FormUMedidasController implements Initializable {
         //creo el objecto
         UnidadMedida uMedida = new UnidadMedida(vSig,vDes);
         umData.insertarUnidadMedida(uMedida);
+    }
+
+    //metodo editar Unidad Medida
+    private void editUnidadMedida(){
+        int vIdU = Integer.parseInt(txtIdU.getText());
+        String vSig = txtSigU.getText().trim();
+        String vDes = txtDesU.getText().trim();
+        //creo el objecto
+        UnidadMedida uMedida = new UnidadMedida(vSig,vDes);
+        umData.editarUnidadMedida(uMedida);
+    }
+
+    //metodo limpiar campos
+    private void limpiarCampos(){
+        txtIdU.setText("");
+        txtSigU.setText("");
+        txtDesU.setText("");
     }
 }

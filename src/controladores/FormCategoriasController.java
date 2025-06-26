@@ -12,6 +12,7 @@ import entidades.*;
 import accesoADatos.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.Optional;
@@ -101,7 +102,8 @@ public class FormCategoriasController implements Initializable {
     }
     @FXML
     private void onBtnBajas(ActionEvent event){
-
+        Stage stage = (Stage) btnCerrar.getScene().getWindow();
+        stage.close();
     }
     @FXML
     private void onBtnCerrar(ActionEvent event){
