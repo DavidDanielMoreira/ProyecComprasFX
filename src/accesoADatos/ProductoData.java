@@ -160,7 +160,48 @@ public class ProductoData {
         }
         return producto;
     }
-
+    //metodo que lista los Productos a reponer
+    public List<Producto> listarProductosAReponer(){
+        Producto producto = null;
+        ObservableList<Producto> lisProdRep = FXCollections.observableArrayList();
+        String sql = "Select id_prod,codigo_prod,descripcion_corta_prod,codigo_barra_prod,precio_c,margen,iva,precio_v,stock_i,stock,cantidad,id_mone,id_cate,id_prov,id_unid,estado_prod from productos where stock<=3 and estado_prod=1";
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()){
+                producto = new Producto();
+                producto.setIdProd(rs.getInt("id_prod"));
+                producto.setCodigoProd(rs.getString("codigo_prod"));
+                producto.setDescripcionCortaProd(rs.getString("descripcion_corta_prod"));
+                producto.setCodigoBarraProd(rs.getString("codigo_barra_prod"));
+                producto.setPrecioC(rs.getDouble("precio_c"));
+                producto.setMargen(rs.getDouble("margen"));
+                producto.setIva(rs.getDouble("iva"));
+                producto.setPrecioV(rs.getDouble("precio_v"));
+                producto.setStockI(rs.getDouble("stock_i"));
+                producto.setStock(rs.getDouble("stock"));
+                producto.setCantidad(rs.getDouble("cantidad"));
+                //busco la Moneda
+                mSelec = mData.buscarPorId(rs.getInt("id_mone"));
+                producto.setMoneda(mSelec);
+                //busco la Categoria
+                cSelec = cData.buscarPorId(rs.getInt("id_cate"));
+                producto.setCategoria(cSelec);
+                //busco el Proveedor
+                pSelec = pData.buscarPorId(rs.getInt("id_prov"));
+                producto.setProveedor(pSelec);
+                //busco la UnidadMedida
+                umSelec = umData.buscarPorId(rs.getInt("id_unid"));
+                producto.setUnidadMedida(umSelec);
+                lisProdRep.add(producto);
+            }
+            ps.close();
+        } catch (SQLException e) {
+            //throw new RuntimeException(e);
+            System.out.println("Error al listar los Productos a reponer..."+e.getMessage());
+        }
+        return lisProdRep;
+    }
     //metodo listar Productos por Proveedor
     public List<Producto> listarPorProveedor(int vIdProv){
         Producto producto = null;

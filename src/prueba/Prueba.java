@@ -15,11 +15,11 @@ public class Prueba {
     public static void main(String[] args){
        // con = Conexion.getConectar();
         Prueba prueba = new Prueba();
-        prueba.getPrueba(3);
+        prueba.getPrueba();
     }
 
     //metodo estatico para realizar pruebas
-    public void getPrueba(int vIdT){
+    public void getPrueba(){
         //System.out.println(cData.listarCategorias());
         //System.out.println(mpData.listarModos());
         //System.out.println(prodData.listarProductos());
@@ -28,6 +28,7 @@ public class Prueba {
         //System.out.println(compData.listarCompras());
         //System.out.println(clieData.listarClientes());
         //System.out.println(clieData.buscarPorId(vIdC));
-        System.out.println(dtData.listarPorId(vIdT));
+        //System.out.println(dtData.listarPorId(vIdT));
+        System.out.println(prodData.listarProductosAReponer());
     }
 }
