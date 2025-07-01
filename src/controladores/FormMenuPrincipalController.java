@@ -161,6 +161,7 @@ public class FormMenuPrincipalController implements Initializable {
         try {
             Parent root = loader.load();
             Scene scene = new Scene(root);
+            scene.getStylesheets().add(getClass().getResource("/css/estilos.css").toExternalForm());
             Stage fProv = new Stage();
             fProv.setScene(scene);
             fProv.setResizable(false);
@@ -179,6 +180,7 @@ public class FormMenuPrincipalController implements Initializable {
         try {
             Parent root = loader.load();
             Scene scene = new Scene(root);
+            scene.getStylesheets().add(getClass().getResource("/css/estilos.css").toExternalForm());
             Stage fUnid = new Stage();
             fUnid.setScene(scene);
             fUnid.setResizable(false);
@@ -196,6 +198,7 @@ public class FormMenuPrincipalController implements Initializable {
         try {
             Parent root = loader.load();
             Scene scene = new Scene(root);
+            scene.getStylesheets().add(getClass().getResource("/css/estilos.css").toExternalForm());
             Stage fTick = new Stage();
             fTick.setScene(scene);
             fTick.setResizable(false);
@@ -215,6 +218,7 @@ public class FormMenuPrincipalController implements Initializable {
         try {
             Parent root = loader.load();
             Scene scene = new Scene(root);
+            scene.getStylesheets().add(getClass().getResource("/css/estilos.css").toExternalForm());
             Stage fProd = new Stage();
             fProd.setScene(scene);
             fProd.setResizable(false);
@@ -234,6 +238,7 @@ public class FormMenuPrincipalController implements Initializable {
         try {
             Parent root = loader.load();
             Scene scene = new Scene(root);
+            scene.getStylesheets().add(getClass().getResource("/css/estilos.css").toExternalForm());
             Stage fMone = new Stage();
             fMone.setScene(scene);
             fMone.setResizable(false);
@@ -272,6 +277,7 @@ public class FormMenuPrincipalController implements Initializable {
         try {
             Parent root = loader.load();
             Scene scene = new Scene(root);
+            scene.getStylesheets().add(getClass().getResource("/css/estilos.css").toExternalForm());
             Stage fComp = new Stage();
             fComp.setScene(scene);
             fComp.setResizable(false);

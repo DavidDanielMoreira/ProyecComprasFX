@@ -37,11 +37,25 @@ public class CompraData {
         }
     }
 
+    //metodo dar de baja por id
+    public void bajasPorId(int vIdC){
+        String sql = "Update compras set estado_comp=0 where id_comp=?";
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1,vIdC);
+            ps.executeUpdate();
+            ps.close();
+        } catch (SQLException e) {
+            //throw new RuntimeException(e);
+            System.out.println("Error al dar de bajas una Compra..."+e.getMessage());
+        }
+    }
+
     //metodo listar Compras
     public List<Compra> listarCompras(){
         Compra compra = null;
         ObservableList<Compra> lisCompras = FXCollections.observableArrayList();
-        String sql = "Select id_comp,fecha_comp,tipo_factura_comp,nro_factura_comp,id_prov,id_modo,total,estado_comp from compras";
+        String sql = "Select id_comp,fecha_comp,tipo_factura_comp,nro_factura_comp,id_prov,id_modo,total,estado_comp from compras where estado_comp=1";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
@@ -70,7 +84,7 @@ public class CompraData {
     //metodo buscar por id
     public Compra buscarPorId(int vIdC){
         Compra compra = null;
-        String sql = "Select id_comp,fecha_comp,tipo_factura_comp,nro_factura_comp,id_prov,id_modo,total,estado_comp from compras where id_comp=?";
+        String sql = "Select id_comp,fecha_comp,tipo_factura_comp,nro_factura_comp,id_prov,id_modo,total,estado_comp from compras where id_comp=? and estado_comp=1";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1,vIdC);

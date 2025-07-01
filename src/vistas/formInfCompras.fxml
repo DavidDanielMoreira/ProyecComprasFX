@@ -33,5 +33,6 @@
       <TextField fx:id="txtTotal" layoutX="486.0" layoutY="365.0" prefHeight="30.0" prefWidth="80.0" />
       <Label layoutX="445.0" layoutY="372.0" text="Total:" />
       <Button fx:id="btnCerrar" layoutX="332.0" layoutY="366.0" mnemonicParsing="false" onAction="#onBtnCerrar" prefHeight="30.0" prefWidth="90.0" text="Cerrar" />
+      <Button fx:id="btnEliminarCompra" layoutX="180.0" layoutY="366.0" mnemonicParsing="false" onAction="#onBtnEliminarCompra" prefHeight="30.0" prefWidth="120.0" text="Eliminar Compra" />
    </children>
 </AnchorPane>

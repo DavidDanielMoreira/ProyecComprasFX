@@ -13,28 +13,28 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="520.0" prefWidth="570.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.FormComprasController">
+<AnchorPane styleClass="fondo_forms" prefHeight="520.0" prefWidth="570.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.FormComprasController">
    <children>
       <TitledPane animated="false" layoutX="15.0" layoutY="15.0" prefHeight="140.0" prefWidth="540.0" text="Datos Compras:">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <Label layoutX="15.0" layoutY="15.0" text="Fecha:" />
+                  <Label layoutX="15.0" layoutY="15.0" text="Fecha:" styleClass="css_equitetas" />
                   <DatePicker fx:id="dpFecha" layoutX="15.0" layoutY="30.0" onMouseClicked="#onSelecFecha" prefHeight="28.0" prefWidth="120.0" />
-                  <Label layoutX="140.0" layoutY="15.0" text="Tipo:" />
+                  <Label layoutX="140.0" layoutY="15.0" text="Tipo:" styleClass="css_etiquetas" />
                   <TextField fx:id="txtTipo" layoutX="140.0" layoutY="30.0" prefHeight="28.0" prefWidth="40.0" />
-                  <Label layoutX="185.0" layoutY="15.0" text="Nro. Comprobante:" />
+                  <Label layoutX="185.0" layoutY="15.0" text="Nro. Comprobante:" styleClass="css_etiquetas" />
                   <TextField fx:id="txtNroF" layoutX="185.0" layoutY="30.0" prefHeight="28.0" prefWidth="110.0" />
-                  <Label layoutX="15.0" layoutY="60.0" text="Razón Social:" />
+                  <Label layoutX="15.0" layoutY="60.0" text="Razón Social:" styleClass="css_etiquetas" />
                   <TextField fx:id="txtRaz" layoutX="15.0" layoutY="76.0" prefHeight="28.0" prefWidth="230.0" />
-                  <Label layoutX="250.0" layoutY="60.0" text="Cuit:" />
+                  <Label layoutX="250.0" layoutY="60.0" text="Cuit:" styleClass="css_etiquetas"/>
                   <TextField fx:id="txtCui" layoutX="250.0" layoutY="76.0" prefHeight="28.0" prefWidth="80.0" />
                   <Button fx:id="btnProveedores" layoutX="335.0" layoutY="75.0" mnemonicParsing="false" onAction="#onBtnProveedores" prefHeight="28.0" prefWidth="30.0" text="Button" />
                   <VBox layoutX="455.0" layoutY="5.0" prefHeight="100.0" prefWidth="80.0" spacing="5.0">
                      <children>
-                        <Button fx:id="btnAceptar" mnemonicParsing="false" onAction="#onBtnAceptar" prefHeight="28.0" prefWidth="80.0" text="Aceptar" />
-                        <Button fx:id="btnBajas" mnemonicParsing="false" onAction="#onBtnBajas" prefHeight="28.0" prefWidth="80.0" text="Bajas" />
-                        <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#onBtnCancelar" prefHeight="28.0" prefWidth="80.0" text="Cancelar" />
+                        <Button fx:id="btnAceptar" mnemonicParsing="false" onAction="#onBtnAceptar" prefHeight="28.0" prefWidth="80.0" text="Aceptar" styleClass="css_botones" />
+                        <Button fx:id="btnBajas" mnemonicParsing="false" onAction="#onBtnBajas" prefHeight="28.0" prefWidth="80.0" text="Bajas" styleClass="css_botones" />
+                        <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#onBtnCancelar" prefHeight="28.0" prefWidth="80.0" text="Cancelar" styleClass="css_botones" />
                      </children>
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -43,8 +43,8 @@
                   <TextField fx:id="txtIdComp" layoutX="60.0" layoutY="3.0" prefHeight="20.0" prefWidth="30.0" />
                   <TextField fx:id="txtIdProv" layoutX="90.0" layoutY="3.0" prefHeight="20.0" prefWidth="30.0" />
                   <ComboBox fx:id="cmbModos" layoutX="300.0" layoutY="30.0" onMouseClicked="#onSelecModo" prefHeight="28.0" prefWidth="140.0" />
-                  <Label layoutX="300.0" layoutY="15.0" text="Modo Pago:" />
-                  <Button fx:id="btnCerrar" layoutX="370.0" layoutY="76.0" mnemonicParsing="false" onAction="#onBtnCerrar" prefHeight="28.0" prefWidth="80.0" text="Cerrar" />
+                  <Label layoutX="300.0" layoutY="15.0" text="Modo Pago:" styleClass="css_etiquetas" />
+                  <Button fx:id="btnCerrar" layoutX="370.0" layoutY="76.0" mnemonicParsing="false" onAction="#onBtnCerrar" prefHeight="28.0" prefWidth="80.0" text="Cerrar" styleClass="css_boton_cerrar" />
                </children>
             </AnchorPane>
         </content>
@@ -63,29 +63,29 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <Label layoutX="15.0" layoutY="15.0" text="Codigo:" />
+                  <Label layoutX="15.0" layoutY="15.0" text="Codigo:" styleClass="css_etiquetas" />
                   <TextField fx:id="txtCod" layoutX="15.0" layoutY="30.0" prefHeight="28.0" prefWidth="110.0" />
                   <Button fx:id="btnProductos" layoutX="130.0" layoutY="30.0" mnemonicParsing="false" onAction="#onBtnProductos" prefHeight="28.0" prefWidth="40.0" text="..." />
-                  <Label layoutX="15.0" layoutY="60.0" text="Producto:" />
+                  <Label layoutX="15.0" layoutY="60.0" text="Producto:" styleClass="css_etiquetas"/>
                   <TextField fx:id="txtDes" layoutX="15.0" layoutY="74.0" prefHeight="28.0" prefWidth="200.0" />
-                  <Label layoutX="220.0" layoutY="60.0" text="Precio:" />
+                  <Label layoutX="220.0" layoutY="60.0" text="Precio:" styleClass="css_etiquetas" />
                   <TextField fx:id="txtPre" layoutX="220.0" layoutY="75.0" prefHeight="28.0" prefWidth="70.0" />
-                  <Label layoutX="295.0" layoutY="60.0" text="Cantidad:" />
+                  <Label layoutX="295.0" layoutY="60.0" text="Cantidad:" styleClass="css_etiquetas" />
                   <TextField fx:id="txtCan" layoutX="295.0" layoutY="75.0" onKeyReleased="#onCalcImp" prefHeight="28.0" prefWidth="50.0" />
-                  <Label layoutX="355.0" layoutY="60.0" text="Importe:" />
+                  <Label layoutX="355.0" layoutY="60.0" text="Importe:" styleClass="css_etiquetas"/>
                   <TextField fx:id="txtImp" layoutX="350.0" layoutY="75.0" prefHeight="28.0" prefWidth="80.0" />
                   <HBox layoutX="180.0" layoutY="24.0" prefHeight="40.0" prefWidth="250.0" spacing="5.0">
                      <children>
-                        <Button fx:id="btnAgregar" mnemonicParsing="false" onAction="#onBtnAgregar" prefHeight="28.0" prefWidth="80.0" text="Agregar" />
-                        <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#onBtnEliminar" prefHeight="28.0" prefWidth="80.0" text="Eliminar" />
-                        <Button fx:id="btnInsertar" mnemonicParsing="false" onAction="#onBtnInsertar" prefHeight="28.0" prefWidth="80.0" text="Insertar" />
+                        <Button fx:id="btnAgregar" mnemonicParsing="false" onAction="#onBtnAgregar" prefHeight="28.0" prefWidth="80.0" text="Agregar" styleClass="css_botones" />
+                        <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#onBtnEliminar" prefHeight="28.0" prefWidth="80.0" text="Eliminar" styleClass="css_botones" />
+                        <Button fx:id="btnInsertar" mnemonicParsing="false" onAction="#onBtnInsertar" prefHeight="28.0" prefWidth="80.0" text="Insertar" styleClass="css_botones" />
                      </children>
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding>
                   </HBox>
                   <TextField fx:id="txtTot" layoutX="450.0" layoutY="100.0" prefHeight="28.0" prefWidth="80.0" />
-                  <Label layoutX="410.0" layoutY="106.0" text="Total:" />
+                  <Label layoutX="410.0" layoutY="106.0" text="Total:" styleClass="css_etiquetas" />
                   <TextField fx:id="txtIdProd" layoutX="436.0" layoutY="28.0" prefHeight="20.0" prefWidth="30.0" />
                </children>
             </AnchorPane>
