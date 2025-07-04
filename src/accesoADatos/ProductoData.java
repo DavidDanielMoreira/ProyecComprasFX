@@ -307,17 +307,18 @@ public class ProductoData {
     }
 
     //metodo actualizar Precio
-    public void actualizarPreciosPorProve(double vPreN,int vIdProv){
-        String sql = "Update productos set precio_v=? where id_prov=?";
+    public void actualizarPreciosPorProve(double vPreN,int vIdP,int vIdProv){
+        String sql = "Update productos set precio_v=? where id_prod=? and id_prov=?";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setDouble(1,vPreN);
-            ps.setInt(2,vIdProv);
+            ps.setInt(2,vIdP);
+            ps.setInt(3,vIdProv);
             ps.executeUpdate();
             ps.close();
         } catch (SQLException e) {
             //throw new RuntimeException(e);
-            System.out.println("Error al actualizar los Precios..."+e.getMessage());
+            System.out.println("Error al actualizar los Precios por Proveedor..."+e.getMessage());
         }
     }
 
@@ -333,7 +334,7 @@ public class ProductoData {
             ps.close();
         } catch (SQLException e) {
             //throw new RuntimeException(e);
-            System.out.println("Error al actualizar los Precios..."+e.getMessage());
+            System.out.println("Error al actualizar los Precios por Categorias..."+e.getMessage());
         }
     }
 
